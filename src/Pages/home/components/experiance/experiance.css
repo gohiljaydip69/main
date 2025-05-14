@@ -1,93 +1,110 @@
 .experience-section {
-    padding: 80px 6%;
-    background-color: #181818;
-    color: white;
-    font-family: 'Poppins', sans-serif;
+  padding: 80px 6%;
+  background-color: #181818;
+  color: white;
+  font-family: 'Poppins', sans-serif;
 }
 
 .experience-title {
-    font-size: 40px;
-    color: #00bcd4;
-    margin-bottom: 40px;
-    text-align: center;
+  font-size: 40px;
+  color: #00bcd4;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
-
 .timeline {
-    position: relative;
-    padding-left: 40px;
-    /* Gives enough space for centered dot */
-    border-left: 3px solid #00bcd4;
+  position: relative;
+  padding-left: 40px;
+  border-left: 3px solid #00bcd4;
 }
 
 .timeline-item {
-    position: relative;
-    margin-bottom: 50px;
+  position: relative;
+  margin-bottom: 50px;
+  padding-left: 20px;
 }
 
 .timeline-dot {
-    position: absolute;
-    top: 12px;
-    left: -54px;
-    /* Push half of dot width left to center it on the line */
-    width: 20px;
-    height: 20px;
-    background-color: #00bcd4;
-    border-radius: 50%;
-    border: 3px solid white;
-    z-index: 2;
+  position: absolute;
+  top: 14px;
+  left: -50px;
+  width: 18px;
+  height: 18px;
+  background-color: #00bcd4;
+  border: 3px solid white;
+  border-radius: 50%;
+  z-index: 2;
 }
 
-
 .timeline-content {
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 25px rgba(0, 255, 200, 0.15);
 }
 
 .timeline-content h3 {
-    margin: 0;
-    font-size: 20px;
-    font-weight: 600;
-    color: #ffffff;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
 }
 
 .timeline-content h4 {
-    margin: 5px 0;
-    font-size: 16px;
-    color: #00bcd4;
+  margin: 6px 0;
+  font-size: 16px;
+  color: #00bcd4;
 }
 
 .timeline-content span {
-    font-size: 14px;
-    color: #ccc;
+  font-size: 14px;
+  color: #ccc;
 }
 
 .timeline-content p {
-    margin-top: 10px;
-    font-size: 15px;
-    line-height: 1.6;
-    color: #e0e0e0;
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #e0e0e0;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .timeline {
-        padding-left: 20px;
-    }
+  .timeline {
+    padding-left: 25px;
+    border-left-width: 2px;
+  }
 
-    .timeline-item {
-        padding-left: 25px;
-    }
+  .timeline-item {
+    margin-bottom: 40px;
+    padding-left: 10px;
+  }
 
-    .timeline-dot {
-        left: -10px;
-        width: 16px;
-        height: 16px;
-    }
+  .timeline-dot {
+    left: -12px;
+    width: 14px;
+    height: 14px;
+  }
 
-    .experience-title {
-        font-size: 32px;
-    }
+  .experience-title {
+    font-size: 30px;
+  }
+
+  .timeline-content {
+    padding: 16px;
+  }
+
+  .timeline-content h3 {
+    font-size: 18px;
+  }
+
+  .timeline-content h4 {
+    font-size: 15px;
+  }
 }

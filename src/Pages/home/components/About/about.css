@@ -3,9 +3,7 @@
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
-   background-color: #181818;
-
- 
+  background-color: #181818;
   color: #ffffff;
   padding: 80px 6%;
   box-sizing: border-box;
@@ -73,7 +71,6 @@
   max-width: 420px;
   border-radius: 24px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  
 }
 
 .about-InnerImage:hover {
@@ -130,36 +127,86 @@
 }
 
 /* Responsive Styling */
+
+/* Tablets & Small Desktops */
 @media (max-width: 1024px) {
   .about-Container {
     flex-direction: column;
     text-align: center;
+    padding: 60px 4%;
   }
 
   .about-Content {
     align-items: center;
     text-align: center;
+    padding: 30px 30px;
   }
 
   .about-Heading {
-    font-size: 42px;
+    font-size: 40px;
   }
 
   .about-Description {
     font-size: 1rem;
   }
+
+  .skills-section {
+    text-align: center;
+    padding-left: 0;
+  }
 }
 
+/* Phones */
 @media (max-width: 600px) {
   .about-Content {
-    padding: 25px;
+    padding: 25px 20px;
   }
 
   .about-Heading {
     font-size: 32px;
   }
 
+  .about-Description {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
   .about-InnerImage {
     max-width: 280px;
+  }
+
+  .skills-title {
+    font-size: 24px;
+  }
+
+  .skill-bar span {
+    font-size: 14px;
+  }
+
+  .bar {
+    height: 10px;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 400px) {
+  .about-Heading {
+    font-size: 28px;
+  }
+
+  .about-InnerImage {
+    max-width: 240px;
+  }
+
+  .about-Description {
+    font-size: 0.9rem;
+  }
+
+  .skills-title {
+    font-size: 20px;
+  }
+
+  .skill-bar span {
+    font-size: 13px;
   }
 }

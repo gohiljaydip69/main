@@ -1,17 +1,15 @@
 * {
     padding: 0;
     margin: 0;
-
-
+    box-sizing: border-box;
 }
 
 .main-container {
     background-color: #181818;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    height: 100px;
     align-items: center;
+    height: 100px;
     padding: 0 20px;
     position: fixed;
     top: 0;
@@ -20,10 +18,6 @@
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s ease;
-   background-color: #181818;
-
-
-
 }
 
 .logo {
@@ -32,28 +26,20 @@
     font-size: 2.3rem;
     display: flex;
     align-items: center;
-    justify-content: center;
     cursor: pointer;
-    height: 100%;
     padding-left: 80px;
-
 }
 
 .Navbar-Container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     padding-right: 40px;
 }
 
 .Navbar {
     display: flex;
-    flex-direction: row;
-    padding: 10px;
     gap: 70px;
-    padding-right: 50px;
-
+    padding: 10px 50px 10px 10px;
 }
 
 ul {
@@ -71,6 +57,7 @@ ul {
     padding: 5px 0;
     letter-spacing: 1.4px;
 }
+
 ::marker {
     color: #181818;
 }
@@ -84,53 +71,19 @@ ul {
     content: '';
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -5px;
     height: 2px;
     width: 0;
-    bottom: -5px;
     background-color: white;
     transition: width 0.3s ease;
 }
 
 .nav-link:hover::after {
-
     width: 100%;
 }
 
-
-
-.Navbar-Container {
-    float: right;
-}
-
-/* .Resume-Btn {
-    padding-top: 16px;
-    padding-bottom: 16px;
-    padding-left: 50px;
-    padding-right: 50px;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 10px;
-    background-color: #181818;
-    border-color: white;
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: white;
-
-}
-
-.Resume-Btn:hover {
-    background-color: white;
-    color: black;
-    border-color: white;
-    transition: 0.5s;
-} */
-
 .Resume-Btn {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 10px 50px;
     font-size: 1rem;
     font-weight: 600;
     color: white;
@@ -148,7 +101,6 @@ ul {
     border-color: rgb(228, 222, 222);
 }
 
-
 .hamburger {
     display: none;
     font-size: 2rem;
@@ -157,8 +109,9 @@ ul {
     margin-right: 20px;
 }
 
+/* ===================== Media Queries ===================== */
 
-/* Responsive CSS for all devices */
+/* Tablets */
 @media (max-width: 1024px) {
     .Navbar {
         gap: 40px;
@@ -176,6 +129,7 @@ ul {
     }
 }
 
+/* Tablets and Mobiles */
 @media (max-width: 768px) {
     .main-container {
         flex-direction: column;
@@ -186,49 +140,8 @@ ul {
 
     .Navbar-Container {
         flex-direction: column;
-        align-items: center;
         gap: 20px;
         padding-right: 0;
-    }
-
-    .Navbar {
-        flex-direction: column;
-        gap: 20px;
-        padding: 0;
-    }
-
-    .Resume-Btn {
-        padding: 10px 25px;
-        font-size: 1.1rem;
-    }
-
-    .logo {
-        font-size: 1.8rem;
-        padding-left: 0;
-        padding-bottom: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo {
-        font-size: 1.6rem;
-    }
-
-    li>a {
-        font-size: 1.2rem;
-    }
-
-    .Resume-Btn {
-        padding: 10px 20px;
-        font-size: 1rem;
-    }
-}
-
-
-/* Show hamburger and hide links on mobile */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
     }
 
     .Navbar {
@@ -245,6 +158,34 @@ ul {
     }
 
     .Resume-Btn {
+        padding: 10px 25px;
+        font-size: 1.1rem;
         margin-top: 10px;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+        padding-left: 0;
+        padding-bottom: 10px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.6rem;
+    }
+
+    li > a {
+        font-size: 1.2rem;
+    }
+
+    .Resume-Btn {
+        padding: 10px 20px;
+        font-size: 1rem;
     }
 }

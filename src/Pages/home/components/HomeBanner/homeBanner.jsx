@@ -97,7 +97,7 @@ const HomeBanner = () => {
               display: "flex",
               alignItems: "center",
               gap: "15px",
-              marginTop: "30px",
+           
               flexWrap: "wrap",
             }}
             data-aos="fade-up"

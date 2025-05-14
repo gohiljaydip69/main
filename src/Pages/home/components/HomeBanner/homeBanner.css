@@ -1,6 +1,7 @@
 .banner-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     color: white;
     width: 100%;
     justify-content: space-between;
@@ -8,12 +9,12 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 1;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
     font-family: 'Poppins', sans-serif;
     font-size: 1.6rem;
     line-height: 1.7;
-    background: #181818;
+    padding: 20px 0;
 }
 
 .banner-image {
@@ -26,26 +27,22 @@
 }
 
 .BannerInnerImage {
-    height: 500px;
-   
+    max-height: 500px;
+    width: 100%;
+    object-fit: contain;
 }
 
-
-.banner-icon{
+.banner-icon {
     width: 40px;
     height: 40px;
     cursor: pointer;
     color: white;
-
-    cursor: pointer;
     transition: all 0.3s ease;
-
 }
 
-.banner-icon:hover{
+.banner-icon:hover {
     color: #00bcd4;
     transform: scale(1.1);
-
 }
 
 .banner-content {
@@ -53,16 +50,23 @@
     font-size: 18px;
     font-weight: 600;
     width: 50%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     padding-left: 50px;
     padding-top: 180px;
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+
+.banner-content p {
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .banner-button {
-    padding-top: 16px;
-    padding-bottom: 16px;
-    padding-left: 50px;
-    padding-right: 50px;
+   
+    padding: 16px 50px;
     font-size: 1rem;
     font-weight: 600;
     color: white;
@@ -78,29 +82,28 @@
     background-color: white;
     color: black;
     border-color: white;
-    transition: 0.5s;
-}
-
-.banner-content p {
-    color: white;
-    font-size: 20px;
-    font-weight: 600;
 }
 
 /* Tablet View */
 @media (max-width: 1024px) {
-    .BannerInnerImage {
-        height: 500px;
-    }
-
     .banner-content {
         font-size: 20px;
         padding-top: 60px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
     .banner-button {
         font-size: 1.2rem;
         padding: 14px 40px;
+    }
+
+    .BannerInnerImage {
+        max-height: 400px;
+    }
+
+    .banner-image {
+        padding-left: 40px;
     }
 }
 
@@ -110,16 +113,17 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 40px 20px;
     }
 
     .banner-image,
     .banner-content {
         width: 100%;
-        padding: 0 20px;
+        padding: 0;
     }
 
     .BannerInnerImage {
-        height: 350px;
+        height: 300px;
         width: 90%;
         object-fit: contain;
     }
@@ -127,6 +131,7 @@
     .banner-content {
         padding-top: 30px;
         font-size: 18px;
+        padding: 0 20px;
     }
 
     .banner-button {
@@ -139,15 +144,21 @@
 /* Extra Small Devices */
 @media (max-width: 480px) {
     .BannerInnerImage {
-        height: 250px;
+        height: 220px;
     }
 
     .banner-content {
         font-size: 16px;
+        padding: 0 15px;
     }
 
     .banner-button {
         font-size: 0.9rem;
         padding: 10px 20px;
+    }
+
+    .banner-icon {
+        width: 32px;
+        height: 32px;
     }
 }
