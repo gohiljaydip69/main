@@ -1,0 +1,132 @@
+.banner-container {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 3px solid white;
+
+
+}
+
+.banner-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding-left: 80px;
+
+
+}
+
+.BannerInnerImage {
+    height: 970px;
+    padding-bottom: 150px
+}
+
+.banner-content {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    width: 50%;
+    justify-content: center;
+    padding-left: 50px;
+    padding-top: 220px;
+}
+
+
+.banner-button {
+
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1.7px;
+}
+
+.banner-button:hover {
+    background-color: white;
+    color: black;
+    border-color: white;
+    transition: 0.5s;
+}
+
+.banner-content p {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Tablet View */
+@media (max-width: 1024px) {
+    .BannerInnerImage {
+        height: 500px;
+    }
+
+    .banner-content {
+        font-size: 20px;
+        padding-top: 60px;
+    }
+
+    .banner-button {
+        font-size: 1.2rem;
+        padding: 14px 40px;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .banner-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .banner-image,
+    .banner-content {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .BannerInnerImage {
+        height: 350px;
+        width: 90%;
+        object-fit: contain;
+    }
+
+    .banner-content {
+        padding-top: 30px;
+        font-size: 18px;
+    }
+
+    .banner-button {
+        margin-top: 20px;
+        font-size: 1rem;
+        padding: 12px 30px;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+    .BannerInnerImage {
+        height: 250px;
+    }
+
+    .banner-content {
+        font-size: 16px;
+    }
+
+    .banner-button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
