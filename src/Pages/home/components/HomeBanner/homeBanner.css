@@ -4,9 +4,16 @@
     color: white;
     width: 100%;
     justify-content: space-between;
-    border-bottom: 3px solid white;
-
-
+    background-color: #181818;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    background: #181818;
 }
 
 .banner-image {
@@ -16,33 +23,47 @@
     align-items: center;
     width: 50%;
     padding-left: 80px;
-
-
 }
 
 .BannerInnerImage {
-    height: 970px;
-    padding-bottom: 150px
+    height: 500px;
+   
+}
+
+
+.banner-icon{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    color: white;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+
+.banner-icon:hover{
+    color: #00bcd4;
+    transform: scale(1.1);
+
 }
 
 .banner-content {
     color: white;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 600;
     width: 50%;
     justify-content: center;
     padding-left: 50px;
-    padding-top: 220px;
+    padding-top: 180px;
 }
 
-
 .banner-button {
-
     padding-top: 16px;
     padding-bottom: 16px;
     padding-left: 50px;
     padding-right: 50px;
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-weight: 600;
     color: white;
     background-color: transparent;
@@ -61,9 +82,9 @@
 }
 
 .banner-content p {
-  color: white;
-  font-size: 20px;
-  font-weight: 600;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 /* Tablet View */

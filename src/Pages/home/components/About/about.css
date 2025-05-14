@@ -1,76 +1,165 @@
 .about-Container {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+   background-color: #181818;
 
-    color: #ffffff;
-    padding: 60px 5%;
-    box-sizing: border-box;
-    align-items: center;
-    gap: 40px;
-    transition: all 0.3s ease;
-        background-size: 200% 200%;
-    animation: gradient 15s ease infinite;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    
+ 
+  color: #ffffff;
+  padding: 80px 6%;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  position: relative;
+  overflow: hidden;
 }
 
 .about-Content {
-    flex: 1 1 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-family: 'Poppins', sans-serif;
-    color: #ffffff;
-    z-index: 2;
+  flex: 1 1 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 35px 45px;
+  border-radius: 24px;
+  font-family: 'Poppins', sans-serif;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-Content:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
 }
 
 .about-Heading {
-    font-size: 80px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: #00bcd4;
+  font-size: 52px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.about-Heading span {
+  color: #00e0ff;
+  background: linear-gradient(45deg, #00e0ff, #00bcd4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .about-Description {
-    font-size: 1.6rem;
-    line-height: 1.7;
-    margin-bottom: 15px;
-    color: #cccccc;
+  font-size: 1.05rem;
+  line-height: 2;
+  color: #e4e4e4;
+  opacity: 0.92;
 }
 
 .about-image {
-    flex: 1 1 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
 }
 
 .about-InnerImage {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 20px;
-
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    z-index: 2;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 24px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  
 }
 
 .about-InnerImage:hover {
-    transform: scale(1.05);
-
+  transform: scale(1.07);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6);
 }
 
-@media (max-width: 768px) {
-    .about-Container {
-        flex-direction: column;
-        text-align: center;
-    }
+.skills-section {
+  margin-top: 60px;
+  text-align: left;
+  padding-left: 8px;
+}
 
-    .about-Content {
-        align-items: center;
-    }
+.skills-title {
+  font-size: 30px;
+  margin-bottom: 25px;
+  color: #00e0ff;
+  font-weight: 600;
+}
+
+.skill-bar {
+  margin-bottom: 20px;
+}
+
+.skill-bar span {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.bar {
+  height: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00e0ff, #00bcd4);
+  border-radius: 6px;
+  animation: fillBar 2s ease forwards;
+}
+
+@keyframes fillBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--width);
+  }
+}
+
+/* Responsive Styling */
+@media (max-width: 1024px) {
+  .about-Container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-Content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-Heading {
+    font-size: 42px;
+  }
+
+  .about-Description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-Content {
+    padding: 25px;
+  }
+
+  .about-Heading {
+    font-size: 32px;
+  }
+
+  .about-InnerImage {
+    max-width: 280px;
+  }
 }
