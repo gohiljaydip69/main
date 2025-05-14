@@ -4,6 +4,7 @@ import { CiLinkedin } from "react-icons/ci";
 import { MdOutlineMailOutline } from "react-icons/md";
 import "./contact.css";
 import { Element } from "react-scroll";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   return (

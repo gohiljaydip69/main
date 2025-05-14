@@ -21,7 +21,7 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s ease;
    background-color: #181818;
-   
+
 
 
 }
@@ -69,7 +69,7 @@ ul {
     font-size: 1rem;
     font-weight: bold;
     padding: 5px 0;
-    letter-spacing: 1.7px;
+    letter-spacing: 1.4px;
 }
 ::marker {
     color: #181818;

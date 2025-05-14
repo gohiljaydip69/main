@@ -18,6 +18,8 @@ const HomeBanner = () => {
     });
   }, []);
 
+  
+
   return (
     <Element name="Home">
       <div className="banner-container">
