@@ -9,6 +9,7 @@ import { MdOutlineMailOutline } from "react-icons/md";
 import "aos/dist/aos.css";
 import { Element } from "react-scroll";
 import { Link } from "react-router-dom";
+import { TypeAnimation } from "react-type-animation";
 
 const HomeBanner = () => {
   useEffect(() => {
@@ -17,8 +18,6 @@ const HomeBanner = () => {
       once: true,
     });
   }, []);
-
-  
 
   return (
     <Element name="Home">
@@ -37,14 +36,11 @@ const HomeBanner = () => {
             data-aos="zoom-in"
             data-aos-delay="100"
           >
-            <Typewriter
-              words={[`Hi, I’m Jaydip 👋`]}
-              loop={0}
-              cursor
-              cursorStyle="|"
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={2000}
+            <TypeAnimation
+              sequence={["Hii, I'm Jaydip Gohil 👋", 1000]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
             />
           </h1>
 
@@ -74,7 +70,27 @@ const HomeBanner = () => {
             data-aos="fade-up"
             data-aos-delay="400"
           >
-            <Typewriter
+            <TypeAnimation
+              sequence={[
+               '"MERN STACK DEVELOPER"',
+                1000,
+               '"React Enthusiast"',
+                1000,
+              '"Building Scalable Web Apps"',
+                1000,
+                 '"Turning Ideas into Full-Stack Reality"',
+                1000,
+                () => {
+                  console.log("Done typing!"); // Place optional callbacks anywhere in the array
+                },
+              1000,
+
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+            />
+            {/* <Typewriter
               words={[
                 '"MERN STACK DEVELOPER"',
                 '"React Enthusiast"',
@@ -87,7 +103,7 @@ const HomeBanner = () => {
               typeSpeed={70}
               deleteSpeed={50}
               delaySpeed={2000}
-            />
+            /> */}
           </span>
 
           <br />
@@ -97,7 +113,7 @@ const HomeBanner = () => {
               display: "flex",
               alignItems: "center",
               gap: "15px",
-           
+
               flexWrap: "wrap",
             }}
             data-aos="fade-up"
@@ -105,25 +121,16 @@ const HomeBanner = () => {
           >
             <button className="banner-button">Contact Me</button>
             <Link to="https://github.com/gohiljaydip69" target="_blank">
-              <FaGithub
-              className="banner-icon"
-           
-              />
+              <FaGithub className="banner-icon" />
             </Link>
             <Link
-            
               to="https://www.linkedin.com/in/jaydipgohil31/"
               target="_blank"
             >
-              <CiLinkedin
-              className="banner-icon"
-              />
+              <CiLinkedin className="banner-icon" />
             </Link>
             <Link to="mailto:gohiljaydip69@gmail.com">
-              <MdOutlineMailOutline
-              className="banner-icon"
-              
-              />
+              <MdOutlineMailOutline className="banner-icon" />
             </Link>
           </div>
         </div>
