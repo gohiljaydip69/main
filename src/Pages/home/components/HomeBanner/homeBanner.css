@@ -45,6 +45,13 @@
     transform: scale(1.1);
 }
 
+.flex.items-center.gap-4.flex-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
 .banner-content {
     color: white;
     font-size: 18px;
@@ -54,7 +61,7 @@
     flex-direction: column;
     justify-content: center;
     padding-left: 50px;
-    padding-top: 180px;
+   
     padding-right: 40px;
     box-sizing: border-box;
 }
@@ -153,7 +160,7 @@
     }
 
     .banner-button {
-        font-size: 0.9rem;
+        font-size: 0.9rem;  
         padding: 10px 20px;
     }
 

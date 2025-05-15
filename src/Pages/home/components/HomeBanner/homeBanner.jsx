@@ -1,50 +1,51 @@
-import React, { useEffect } from "react";
-import "./homeBanner.css";
-import bannerImage from "../../assets/banner_Image.png";
-import { Typewriter } from "react-simple-typewriter";
-import AOS from "aos";
+import React from "react";
+import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
 import { MdOutlineMailOutline } from "react-icons/md";
-import "aos/dist/aos.css";
 import { Element } from "react-scroll";
 import { Link } from "react-router-dom";
-import { TypeAnimation } from "react-type-animation";
+import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
+
+import bannerImage from "../../assets/banner_Image.png";
+import "./homeBanner.css";
 
 const HomeBanner = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
-
   return (
     <Element name="Home">
       <div className="banner-container">
-        <div className="banner-image" data-aos="fade-right">
-          <img className="BannerInnerImage" src={bannerImage} alt="Banner" />
-        </div>
+        {/* Image Side */}
+        <motion.div
+          className="banner-image"
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <img
+            className="BannerInnerImage"
+            src={bannerImage}
+            alt="Banner"
+          />
+        </motion.div>
 
-        <div className="banner-content" data-aos="fade-left">
-          <h1
-            style={{
-              fontSize: "38px",
-              color: "#00bcd4",
-              fontWeight: "bold",
-            }}
-            data-aos="zoom-in"
-            data-aos-delay="100"
+        {/* Content Side */}
+        <motion.div
+          className="banner-content"
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <motion.h1
+            style={{ fontSize: "38px", color: "#00bcd4", fontWeight: "bold" }}
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
           >
-            <TypeAnimation
-              sequence={["Hii, I'm Jaydip Gohil 👋", 1000]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-            />
-          </h1>
+            Hi, I'm Jaydip Gohil 👋
+          </motion.h1>
 
-          <p
+          <motion.p
             style={{
               justifyContent: "center",
               color: "#ccc",
@@ -56,84 +57,59 @@ const HomeBanner = () => {
               textAlign: "left",
               fontFamily: "Arial, sans-serif",
             }}
-            data-aos="fade-up"
-            data-aos-delay="200"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
           >
-            MERN Stack Developer passionate about crafting scalable,
-            user-friendly web applications using modern technologies like React,
-            Node.js, and MongoDB.
-          </p>
+            MERN Stack Developer passionate about crafting scalable, user-friendly web applications using modern technologies like React, Node.js, and MongoDB.
+          </motion.p>
 
           <br />
-          <span
-            style={{ color: "white", fontWeight: "600", fontSize: "18px" }}
-            data-aos="fade-up"
-            data-aos-delay="400"
-          >
-            <TypeAnimation
-              sequence={[
-               '"MERN STACK DEVELOPER"',
-                1000,
-               '"React Enthusiast"',
-                1000,
-              '"Building Scalable Web Apps"',
-                1000,
-                 '"Turning Ideas into Full-Stack Reality"',
-                1000,
-                () => {
-                  console.log("Done typing!"); // Place optional callbacks anywhere in the array
-                },
-              1000,
 
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-            />
-            {/* <Typewriter
-              words={[
-                '"MERN STACK DEVELOPER"',
-                '"React Enthusiast"',
-                '"Building Scalable Web Apps"',
-                '"Turning Ideas into Full-Stack Reality"',
-              ]}
-              loop={0}
-              cursor
-              cursorStyle="|"
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={2000}
-            /> */}
-          </span>
-
-          <br />
-          <br />
-          <div
+          <motion.span
             style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "15px",
-
-              flexWrap: "wrap",
+              color: "white",
+              fontWeight: "600",
+              fontSize: "18px",
             }}
-            data-aos="fade-up"
-            data-aos-delay="600"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
           >
-            <button className="banner-button">Contact Me</button>
+            "MERN STACK DEVELOPER • React Enthusiast • Building Scalable Web Apps • Turning Ideas into Full-Stack Reality"
+          </motion.span>
+
+          <br />
+          <br />
+
+          {/* Icons + Button */}
+          <motion.div
+            className="flex items-center gap-4 flex-wrap"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
+          >
+            <button
+              className={twMerge(
+                clsx("banner-button")
+              )}
+            >
+              Contact Me
+            </button>
+
             <Link to="https://github.com/gohiljaydip69" target="_blank">
               <FaGithub className="banner-icon" />
             </Link>
-            <Link
-              to="https://www.linkedin.com/in/jaydipgohil31/"
-              target="_blank"
-            >
+
+            <Link to="https://www.linkedin.com/in/jaydipgohil31/" target="_blank">
               <CiLinkedin className="banner-icon" />
             </Link>
+
             <Link to="mailto:gohiljaydip69@gmail.com">
               <MdOutlineMailOutline className="banner-icon" />
             </Link>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </Element>
   );
